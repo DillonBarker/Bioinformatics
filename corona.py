@@ -11,12 +11,18 @@ os.chdir('C:/Users/barke/Documents/2020/Coding and Stats/Github-Repositories/Bio
 # load the sequence
 from Bio import SeqIO
 for record in SeqIO.parse("genome.fasta", "fasta"):
-    id  = record.id
-    seq = record.seq
+    genome_id  = record.id
+    genome_seq = record.seq
 
 # id gives the id of the genome, whilst seq is the fill sequence
 
 # translate the sequence
-translated_seq = seq.translate()
+translated_seq = genome_seq.translate()
 
-#
+# align to a previous SARS spike protein sequence
+for record in SeqIO.parse("spike.fasta", "fasta"):
+    spike_id  = record.id
+    spike_seq = record.seq
+
+
+
