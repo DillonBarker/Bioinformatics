@@ -63,7 +63,7 @@ for record in SeqIO.parse("spike2.fasta", "fasta"):
 from Bio.PDB import *
 
 pdbl = PDBList()
-pdbl.retrieve_pdb_file('spikeprotein')
+pdbl.retrieve_pdb_file('5x58')
 
 
 
