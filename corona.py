@@ -5,9 +5,9 @@ import os
 from Bio.Alphabet import generic_dna, HasStopCodon
 
 # set wd on laptop
-# os.chdir('C:/Users/barke/Documents/2020/Github-Repositories/Bioinformatics')
+os.chdir('C:/Users/barke/Documents/2020/Github-Repositories/Bioinformatics')
 # set wd on pc
-os.chdir('C:/Users/barke/Documents/2020/Coding and Stats/Github-Repositories/Bioinformatics')
+#os.chdir('C:/Users/barke/Documents/2020/Coding and Stats/Github-Repositories/Bioinformatics')
 
 # load the sequence
 from Bio import SeqIO
@@ -59,5 +59,11 @@ for record in SeqIO.parse("spike2.fasta", "fasta"):
     spike2_id = record.id
     spike2_translated_seq = record.seq
 
-#
+# pdb
+from Bio.PDB import *
+
+pdbl = PDBList()
+pdbl.retrieve_pdb_file('spikeprotein')
+
+
 
