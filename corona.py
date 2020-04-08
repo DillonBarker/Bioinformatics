@@ -59,3 +59,5 @@ for record in SeqIO.parse("spike2.fasta", "fasta"):
     spike2_id = record.id
     spike2_translated_seq = record.seq
 
+#
+
