@@ -5,9 +5,9 @@ import os
 from Bio.Alphabet import generic_dna, HasStopCodon
 
 # set wd on laptop
-os.chdir('C:/Users/barke/Documents/2020/Github-Repositories/Bioinformatics')
+#os.chdir('C:/Users/barke/Documents/2020/Github-Repositories/Bioinformatics')
 # set wd on pc
-#os.chdir('C:/Users/barke/Documents/2020/Coding and Stats/Github-Repositories/Bioinformatics')
+os.chdir('C:/Users/barke/Documents/2020/Coding and Stats/Github-Repositories/Bioinformatics')
 
 # load the sequence
 from Bio import SeqIO
@@ -63,7 +63,19 @@ for record in SeqIO.parse("spike2.fasta", "fasta"):
 from Bio.PDB import *
 
 pdbl = PDBList()
-pdbl.retrieve_pdb_file('5x58')
+pdbl.retrieve_pdb_file('5x58') ## this is saved into a file called x5
+pdbl = PDBList()
+pdbl.retrieve_pdb_file('6vxx') ## this is saved into a file called vx
+
+# parsing the structure files
+parser = MMCIFParser()
+
+#
+structure = parser.get_structure('5x58', 'x5/5x58.cif')
+structure = parser.get_structure('6vxx', 'vx/6vxx.cif')
+
+
+
 
 
 
