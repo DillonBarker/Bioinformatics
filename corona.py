@@ -70,9 +70,19 @@ pdbl.retrieve_pdb_file('6vxx') ## this is saved into a file called vx
 # parsing the structure files
 parser = MMCIFParser()
 
-#
-structure = parser.get_structure('5x58', 'x5/5x58.cif')
-structure = parser.get_structure('6vxx', 'vx/6vxx.cif')
+# extracting the structural information from the cif files.
+SARS_CoV_spike_structure = parser.get_structure('5x58', 'x5/5x58.cif')
+SARS_Cov_2_spike_structure = parser.get_structure('6vxx', 'vx/6vxx.cif')
+
+# taking a look at the attributes
+def cleandir(obj):
+    print(", ".join([a for a in dir(obj) if not a.startswith("_")]))
+cleandir(SARS_CoV_spike_structure)
+def cleandir(obj):
+    print(", ".join([a for a in dir(obj) if not a.startswith("_")]))
+cleandir(SARS_Cov_2_spike_structure)
+
+import nglview as nv
 
 
 
